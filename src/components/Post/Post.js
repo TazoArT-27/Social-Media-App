@@ -27,7 +27,7 @@ const Post = (props) => {
           
 		},
 		cardTop: {
-			height: '58vh',
+			height: '60vh',
 		},
         media: {
           height: 0,
