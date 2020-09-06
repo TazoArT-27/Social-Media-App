@@ -5,9 +5,10 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {useParams} from "react-router-dom";
 import Comments from "../Comments/Comments";
-import { Box } from "@material-ui/core";
+import { Box, CardHeader, Avatar, IconButton } from "@material-ui/core";
 import { Container } from "react-bootstrap";
 import './FullPost.css';
 
@@ -56,6 +57,20 @@ const FullPost = () => {
 		<Box mt={5} mb={5}>
 			<Container className={classes.main}>
 			    <Card className={classes.root}>
+				<CardHeader
+                    avatar={
+                    <Avatar aria-label="recipe" className={classes.avatar}>
+                        <img src='https://randomuser.me/api/portraits/women/10.jpg' alt=""/>
+                    </Avatar>
+                    }
+                    action={
+                    <IconButton aria-label="settings">
+                        <MoreVertIcon />
+                    </IconButton>
+                    }
+                    title='Anne Hathaway'
+                    subheader="September 14, 2016"
+                />
 				<CardActionArea>
 					<CardMedia
 						className={classes.media}
