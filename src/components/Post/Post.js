@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -18,7 +18,11 @@ import { Link } from 'react-router-dom';
 const Post = (props) => {
     const {id, body, title} = props.post;
     
-   
+   const [color, setColor] = useState('');
+   const handleColor = () => {
+     const heartColor = color ? '' : 'secondary';
+     setColor(heartColor);
+   }
 
     //styles for cards
     const useStyles = makeStyles((theme) => ({
@@ -88,9 +92,9 @@ const Post = (props) => {
                     </Typography>
                 </CardContent>
 			</div>
-                <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
+                <CardActions >
+                    <IconButton aria-label="add to favorites" onClick={handleColor} color={color}>
+                    <FavoriteIcon  />
                     </IconButton>
                     <IconButton aria-label="share">
                     <ShareIcon />
